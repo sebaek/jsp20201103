@@ -20,7 +20,11 @@ while (lotto.size() < 6) {
 }
 
 %>
+<ul>
 
+<li></li>
+
+</ul>
 
 
 </body>
