@@ -12,42 +12,14 @@
 </head>
 <body>
 <%
-java.util.Map<String, String> map = new java.util.HashMap<>();
-map.put("java", "script");
-map.put("html", "css");
-map.put("dbms", "oracle");
-map.put("servlet", "jsp");
-map.put("jquery", "react");
-map.put("python", "django");
-%>
-<ul>
-<%
-for (java.util.Map.Entry<String, String> entry : map.entrySet()) {
-%>
-<li>
-<%= entry.getKey() %> : <%= entry.getValue() %>
-<%-- <%
-out.print(entry.getKey());
-out.print(":");
-out.print(entry.getValue());
-%> --%>
-</li>
-<%
+int sum = 0;
+for (int i = 1; i <= 10; i++) {
+ sum = sum + i; 
 }
 %>
-</ul>
+1 부터 10까지의 합은 <%= sum %>입니다.
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 

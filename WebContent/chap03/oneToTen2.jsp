@@ -11,42 +11,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-java.util.Map<String, String> map = new java.util.HashMap<>();
-map.put("java", "script");
-map.put("html", "css");
-map.put("dbms", "oracle");
-map.put("servlet", "jsp");
-map.put("jquery", "react");
-map.put("python", "django");
-%>
-<ul>
-<%
-for (java.util.Map.Entry<String, String> entry : map.entrySet()) {
-%>
-<li>
-<%= entry.getKey() %> : <%= entry.getValue() %>
-<%-- <%
-out.print(entry.getKey());
-out.print(":");
-out.print(entry.getValue());
-%> --%>
-</li>
-<%
-}
-%>
-</ul>
+1 부터 10까지의 합은
+<%= 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 %>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 

@@ -11,45 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-java.util.Map<String, String> map = new java.util.HashMap<>();
-map.put("java", "script");
-map.put("html", "css");
-map.put("dbms", "oracle");
-map.put("servlet", "jsp");
-map.put("jquery", "react");
-map.put("python", "django");
-%>
-<ul>
-<%
-for (java.util.Map.Entry<String, String> entry : map.entrySet()) {
-%>
-<li>
-<%= entry.getKey() %> : <%= entry.getValue() %>
-<%-- <%
-out.print(entry.getKey());
-out.print(":");
-out.print(entry.getValue());
-%> --%>
-</li>
-<%
-}
-%>
-</ul>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
