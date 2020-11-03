@@ -37,7 +37,7 @@ String colorClass(int num) {
   font-size: 30px;
   font-weight: 900;
   text-align: center;
-  line-height: 100px;
+  line-height: 90px;
 }
 .lotto-color0 {
   color: white;
