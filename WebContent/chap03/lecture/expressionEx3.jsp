@@ -21,9 +21,22 @@ while (lotto.size() < 6) {
 
 %>
 <ul>
+<%
+for (Integer i : lotto) {
+%>
+<li><%= i %></li>
+<%  
+}
+%>
+</ul>
 
-<li></li>
-
+<hr />
+<ul>
+<%
+for (Integer i : lotto) {
+ out.print("<li>" + i + "</li>"); 
+}
+%>
 </ul>
 
 
