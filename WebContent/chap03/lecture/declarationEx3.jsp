@@ -16,7 +16,7 @@ Set<Integer> genLotto() {
 
 <%!
 String colorClass(int num) {
- return "lotto-color" + (num % 10) * 10;
+ return "lotto-color" + (num / 10) * 10;
 }
 %>
 <!DOCTYPE html>
