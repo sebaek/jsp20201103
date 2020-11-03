@@ -1,13 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
 <%!
-public int multiply(int a, int b) {
- int c = a * b;
- return c;
-}
-%>    
-
+int i = 3;
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,12 +15,18 @@ public int multiply(int a, int b) {
 <title>Insert title here</title>
 </head>
 <body>
-10 * 25 = <%= multiply(10, 25) %>
+<%
+int i = 10;
+%>
 
-
+<%= i %> <br />
+<%= this.i %>
 </body>
-
 </html>
+
+
+
+
 
 
 
