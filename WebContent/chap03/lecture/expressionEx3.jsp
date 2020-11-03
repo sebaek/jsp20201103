@@ -11,6 +11,34 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+java.util.Set<Integer> lotto = new java.util.HashSet<>();
+
+while (lotto.size() < 6) {
+  int rand = (int) (Math.random() * 45 + 1);
+  lotto.add(rand); 
+}
+
+%>
+
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
