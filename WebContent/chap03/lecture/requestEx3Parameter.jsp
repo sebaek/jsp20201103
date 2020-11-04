@@ -36,11 +36,13 @@ gender: <%= gender %> <br />
 food : 
 
 <%
-for (int i = 0; i < food.length; i++) {
- out.print(food[i]);
- if (i != food.length-1) {
-  out.print(", "); 
- }
+if (food != null) {
+  for (int i = 0; i < food.length; i++) {
+   out.print(food[i]);
+   if (i != food.length-1) {
+    out.print(", "); 
+   }
+  }
 }
 %>
 <br />
