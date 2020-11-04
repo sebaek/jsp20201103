@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
 </head>
 <body>
 <h1>로그인 되었습니다.</h1>
+id : <%= request.getParameter("id") %> <br />
+pw : <%= request.getParameter("pw") %> <br />
+
 </body>
 </html>
 
