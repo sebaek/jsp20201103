@@ -17,6 +17,10 @@
   age : <input type="number" name="age" id="" /> <br />
   gender : 남자 <input type="radio" name="gender" value="male" /> 
            여자 <input type="radio" name="gender" value="female" /> <br />
+  food : pizza <input type="checkbox" name="food" value="pizza" />
+         burger <input type="checkbox" name="food" value="burger" />
+         icecream <input type="checkbox" name="food" value="icecream" />
+         water <input type="checkbox" name="food" value="water" /> <br />
   <input type="submit" value="전송" class="btn btn-primary" />
 </form>
 
@@ -24,10 +28,22 @@
 String name = request.getParameter("fname");
 String age = request.getParameter("age");
 String gender = request.getParameter("gender");
+String[] food = request.getParameterValues("food");
 %>
 name : <%= name %> <br />
 age : <%= age %> <br />
 gender: <%= gender %> <br />
+food : 
+
+<%
+for (int i = 0; i < food.length; i++) {
+ out.print(food[i]);
+ if (i != food.length-1) {
+  out.print(", "); 
+ }
+}
+%>
+<br />
 
 </body>
 </html>
