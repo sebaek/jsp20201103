@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +14,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-java.util.Calendar cal = java.util.Calendar.getInstance(); 
-%>
-오늘은
-<%= cal.get(java.util.Calendar.YEAR) %> 년
-<%= cal.get(java.util.Calendar.MONTH) + 1 %> 월
-<%= cal.get(java.util.Calendar.DATE) %> 일
+<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos doloribus illo fugiat nisi corporis nemo dolore temporibus sed nesciunt autem repellendus veniam maxime magnam reiciendis laudantium vitae molestiae quaerat.</h1>
 </body>
 </html>
-
-
-
 
 
 

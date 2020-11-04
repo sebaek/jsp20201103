@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +12,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-java.util.Calendar cal = java.util.Calendar.getInstance(); 
-%>
-오늘은
-<%= cal.get(java.util.Calendar.YEAR) %> 년
-<%= cal.get(java.util.Calendar.MONTH) + 1 %> 월
-<%= cal.get(java.util.Calendar.DATE) %> 일
+현재 시각 : <%= new java.util.Date() %>
 </body>
 </html>
-
-
-
-
-
-
