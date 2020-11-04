@@ -12,6 +12,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="container">
+  <a href="requestEx5Form.jsp">돌아가기</a> <br />
+  <%
+  String dan = request.getParameter("dan");
+  int d = Integer.parseInt(dan);
+  
+  for (int i = 1; i <= 9; i++) {
+  %>
+    <%= d %> X <%= i %> = <%= d*i %> <br />
+  <%
+  }
+  %>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
