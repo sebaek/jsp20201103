@@ -16,7 +16,7 @@
   <input type="text" name="id" /> <br />
   <input type="text" name="pw" /> <br />
   <input type="password" name="pw2" /> <br />
-  <input type="number" name="age" /> <br />
+  <input type="number" name="age" value="1"/> <br />
   <input type="date" name="date" />
   <input type="submit" value="전송" /> 
 </form>
@@ -25,7 +25,7 @@ String val1 = request.getParameter("id");
 String val2 = request.getParameter("pw");
 String val3 = request.getParameter("pw2");
 String val4 = request.getParameter("age");
-int val4int = Integer.valueOf(val4);
+//int val4int = Integer.valueOf(val4);
 String val5 = request.getParameter("date");
 
 %>
