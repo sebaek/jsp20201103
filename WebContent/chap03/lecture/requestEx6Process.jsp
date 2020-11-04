@@ -18,12 +18,26 @@ while (lotto.size() < 6) {
  lotto.add((int) (Math.random()*45 + 1)); 
 }
 
+String[] selected = request.getParameterValues("num");
+List<Integer> selectedList = new ArrayList<>();
+
+for (String s : selected) {
+ selectedList.add(Integer.valueOf(s.substring(1))); 
+}
+
+int cnt = 0;
+for (Integer s : selectedList) {
+ if (lotto.contains(s)) {
+  cnt++;
+ }
+}
+
 out.print("당첨번호:");
 out.print(lotto);
 out.print("<br>");
 %>
-선택한 번호 :
-맞춘 갯수 :
+선택한 번호 : <%= selectedList %><br />
+맞춘 갯수 : <%= cnt %>개
 
 </body>
 </html>
