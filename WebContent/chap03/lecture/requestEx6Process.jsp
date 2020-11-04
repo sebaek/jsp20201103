@@ -22,8 +22,8 @@ out.print("당첨번호:");
 out.print(lotto);
 out.print("<br>");
 %>
-
-맞춘 갯수:
+선택한 번호 :
+맞춘 갯수 :
 
 </body>
 </html>
