@@ -13,6 +13,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+int number = 10;
+%>
 
+<%@ include file="includee.jspf" %>
+
+공통변수 DATAFOLDER = "<%= dataFolder %>"
 </body>
 </html>
+
+
+

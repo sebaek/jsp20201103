@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<%@ include file="navbarEx1.jsp" %>
+<%@ include file="/WEB-INF/chap07/include-directive/navbarEx1.jsp" %>
 
 
 <div class="container">
@@ -22,7 +22,7 @@
   <h2><%= name %></h2>
 </div>
 
-<%@ include file="/chap07/lecture/footerEx1.jsp" %>
+<%@ include file="/WEB-INF/chap07/include-directive/footerEx1.jsp" %>
 
 </body>
 </html>
