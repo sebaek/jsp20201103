@@ -24,3 +24,7 @@ include 전 name 파라미터 값: <%= request.getParameter("name") %>
 include 후 name 파라미터 값: <%= request.getParameter("name") %>
 </body>
 </html>
+
+
+
+
