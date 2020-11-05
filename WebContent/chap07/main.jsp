@@ -13,6 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+main.jsp에서 생성한 내용
+<jsp:include page="sub.jsp" flush="false"></jsp:include>
+include 이후의 내용
 </body>
 </html>
