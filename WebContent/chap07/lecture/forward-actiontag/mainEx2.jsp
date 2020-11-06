@@ -13,13 +13,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>main 2 jsp</h1>
 
-이 페이지는 from.jsp가 생성한 것입니다.
-
-<jsp:forward page="to.jsp"></jsp:forward>
-
+<jsp:forward page="subEx2.jsp">
+  <jsp:param value="newVal" name="newParam"/>
+</jsp:forward>
 </body>
 </html>
+
+
 
 
 

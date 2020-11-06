@@ -13,13 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-이 페이지는 from.jsp가 생성한 것입니다.
-
-<jsp:forward page="to.jsp"></jsp:forward>
-
+<h1>sub 2 jsp</h1>
+<h3><%= request.getParameter("newParam") %></h3>
+<h3><%= request.getParameter("param") %></h3>
 </body>
 </html>
+
+
+
 
 
 
