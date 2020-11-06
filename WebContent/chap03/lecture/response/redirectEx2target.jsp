@@ -13,6 +13,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+name : <%= request.getParameter("name") %> <br />
+id : <%= request.getParameter("id") %> <br />
+han : <%= request.getParameter("han") %>
 </body>
 </html>
+
+
+
+
