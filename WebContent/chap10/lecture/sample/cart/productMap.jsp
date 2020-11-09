@@ -33,6 +33,7 @@ if (food != null) {
 }
 
 %>
+장바구니 : <%= map.size() %>개 있음
 <form action="" method="post">
 <select name="food" id="">
   <option value="water">물</option>
