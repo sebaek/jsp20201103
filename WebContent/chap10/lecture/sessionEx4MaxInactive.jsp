@@ -18,7 +18,9 @@ session.setMaxInactiveInterval(5);
 long max = session.getMaxInactiveInterval();
 
 %>
-max inactive interval : <%= max %>
+session id : <%= session.getId() %> <br />
+max inactive interval : <%= max %> <br />
+last accessed : <%= new Date(session.getLastAccessedTime()) %>
 </body>
 </html>
 
