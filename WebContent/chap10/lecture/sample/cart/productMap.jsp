@@ -24,10 +24,12 @@ if (o != null) {
 }
 session.setAttribute("cartMap", map);
 
-if (food != null && map.containsKey(food)) {
-  map.put(food, map.get(food) + 1);
-} else {
-  map.put(food, 1);
+if (food != null) {
+  if (map.containsKey(food)) {
+    map.put(food, map.get(food) + 1);
+  } else {
+    map.put(food, 1);
+  }
 }
 
 %>
