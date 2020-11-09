@@ -2,6 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+
+if (id != null && password != null) {
+  if (id.equals(password)) {
+  	session.setAttribute("id", id);
+  } else {
+    response.sendRedirect("loginForm.jsp"); 
+  }
+} else {
+  response.sendRedirect("loginForm.jsp");
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,18 +28,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-session.invalidate();
-%>
-
-로그아웃하였습니다.
+<h1><%= session.getAttribute("id") %>님 반갑습니다.</h1>
+<a href="logout.jsp">로그 아웃</a>
 </body>
 </html>
-
-
-
-
-
 
 
 

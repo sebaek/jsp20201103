@@ -13,13 +13,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-session.invalidate();
-%>
+<form action="main.jsp" method="post">
+id : <input type="text" name="id" /> <br />
+pw : <input type="password" name="password" /> <br />
+<input type="submit" value="로그인" />
 
-로그아웃하였습니다.
+</form>
 </body>
 </html>
+
+
+
+
 
 
 
