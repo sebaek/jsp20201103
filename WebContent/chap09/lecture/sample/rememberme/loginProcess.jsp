@@ -40,13 +40,6 @@ if (login) {
   response.sendRedirect("main.jsp");
 } else {
   //로그인 실패 : loginForm.jsp 로 redirection
-
-  Cookie cookie = cookies.getCookie("JSESSIONID");
-  cookie.setMaxAge(-1);
-  cookie.setPath(request.getContextPath());
-  cookie.setHttpOnly(true);
-  response.addCookie(cookie);
-  
   response.sendRedirect("loginForm.jsp");
 }
 
