@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="loginProcess.jsp" >
+<form action="loginProcess.jsp" method="post">
 id : <input type="text" name="id" /> <br />
 pw : <input type="password" name="pw" /> <br />
 <input type="checkbox" name="remember" id="" value="on"/> remember me <br />

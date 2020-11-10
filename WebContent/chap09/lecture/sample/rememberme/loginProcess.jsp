@@ -21,20 +21,22 @@ if (login) {
   session.setAttribute("user", id);
   // rememberme 체크할 경우 세션을 유지하도록
   String remember = request.getParameter("remember");
+  
+  // JSESSIONID 쿠키 얻고, path, httponly setting.
+  Cookie cookie = cookies.getCookie("JSESSIONID");
+  cookie.setPath(request.getContextPath());
+  cookie.setHttpOnly(true);
+  
   if (remember != null && remember.equals("on")) {
-    Cookie cookie = cookies.getCookie("JSESSIONID");
     cookie.setMaxAge(24*60*60);
-    cookie.setPath(request.getContextPath());
-    cookie.setHttpOnly(true);
     response.addCookie(cookie);
     
     session.setMaxInactiveInterval(24*60*60);
   } else {
-  	Cookie cookie = cookies.getCookie("JSESSIONID");
     cookie.setMaxAge(-1);
-    cookie.setPath(request.getContextPath());
-    cookie.setHttpOnly(true);
     response.addCookie(cookie);
+    
+    session.setMaxInactiveInterval(30*60);
   }
   // main.jsp 로 redirection
   response.sendRedirect("main.jsp");
