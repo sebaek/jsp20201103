@@ -15,9 +15,6 @@ if (id != null && pw != null && id.equals(pw)) {
 }
 
 if (login) {
-//로그인 성공 : main.jsp 로 redirection
-  response.sendRedirect("main.jsp");
-
   // 세션에 유저정보 속성(attribute) 추가
   session.setAttribute("user", id);
 
@@ -33,6 +30,9 @@ if (login) {
      
      session.setMaxInactiveInterval(24*60*60);
   }
+  
+  //로그인 성공 : main.jsp 로 redirection
+  response.sendRedirect("main.jsp");
 } else {
 //로그인 실패 : loginForm.jsp 로 redirection
   response.sendRedirect("loginForm.jsp");
