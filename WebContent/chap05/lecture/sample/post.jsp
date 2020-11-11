@@ -45,9 +45,9 @@ if (title != null && !title.isEmpty()
 <hr />
 <ul>
 <%
-for (Post post : list) {
+for (int i = 0; i < list.size(); i++) {
 %>
-  <li><%= post.getTitle() %></li>
+  <li><a href="detail.jsp?id=<%= i %>"><%= list.get(i).getTitle() %></a></li>
 <% 
 }
 %>
