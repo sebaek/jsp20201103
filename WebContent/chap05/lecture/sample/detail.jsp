@@ -1,7 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="chap05.Post" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+String id = request.getParameter("id");
+int i = Integer.parseInt(id);
+
+List<Post> list = (List<Post>) application.getAttribute("list");
+Post post = list.get(i);
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
