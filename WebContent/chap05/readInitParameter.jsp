@@ -14,20 +14,21 @@
 </head>
 <body>
 
-<% 
-HttpServletRequest httpRequest = (HttpServletRequest) pageContext.getRequest();
-%>
-
-request 기본 객체와 pageContext.getRequest()의 동일여부:
-
-<%= request == httpRequest %> 
-<br />
-
-pageContext.getOut() 메서드를 사용한 데이터 출력:
-
+초기화 파라미터 목록:
+<ul>
 <%
-pageContext.getOut().println("안녕하세요!");
+Enumeration<String> initParamEnum = application.getInitParameterNames();
+while (initParamEnum.hasMoreElements()) {
+  String initParamName = initParamEnum.nextElement(); 
 %>
+<li><%= initParamName %>= <%=application.getInitParameter(initParamName) %></li>
+<%
+}
+%>
+
+
+</ul>
+
 </body>
 </html>
 

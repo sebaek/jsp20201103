@@ -13,25 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<% 
-HttpServletRequest httpRequest = (HttpServletRequest) pageContext.getRequest();
-%>
-
-request 기본 객체와 pageContext.getRequest()의 동일여부:
-
-<%= request == httpRequest %> 
-<br />
-
-pageContext.getOut() 메서드를 사용한 데이터 출력:
-
-<%
-pageContext.getOut().println("안녕하세요!");
-%>
+서버정보: <%= application.getServerInfo() %> <br />
+서블릿 규약 메이저 버전: <%= application.getMajorVersion() %> <br />
+서블릿 규약 마이너 머전: <%= application.getMinorVersion() %>
 </body>
 </html>
-
-
 
 
 
