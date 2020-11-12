@@ -52,4 +52,4 @@ SELECT
 FROM employee
 WHERE dno NOT IN (20);
 
-
+SELECT ename FROM employee WHERE eno = 7499;
