@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
-	public static List<String> listEmployeename() {
+	public static List<String> listEmployeeName() {
 		List<String> list = new ArrayList<>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -36,7 +36,10 @@ public class EmployeeDao {
 			rs = stmt.executeQuery(sql);
 			
 			// 5. 결과 처리
-		
+			while (rs.next()) {
+				list.add(rs.getString("ename"));
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
