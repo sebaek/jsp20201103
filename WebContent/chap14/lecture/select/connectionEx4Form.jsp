@@ -13,6 +13,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="connectionEx4View.jsp" method="post">
+  부서번호 : <input type="number" name="dno" /> <br />
+  <input type="submit" value="지역 찾기"/>
+</form>
 </body>
 </html>
+
+
+
+
+
+
