@@ -24,4 +24,32 @@ SELECT * FROM employee
 WHERE ename > 'C' AND salary > 2000 AND dno <> 30;
 
 
+SELECT * FROM employee
+WHERE salary >= 3000 AND salary <= 5000;
+
+SELECT * FROM employee
+WHERE salary BETWEEN 3000 AND 5000;
+
+SELECT * FROM employee
+WHERE hiredate BETWEEN '1982/01/01' AND '1982/12/31';
+
+SELECT * FROM employee
+WHERE salary < 3000 OR salary > 5000;
+
+SELECT * FROM employee
+WHERE salary NOT BETWEEN 3000 AND 5000;
+
+SELECT * FROM employee
+WHERE dno = 10 OR dno = 20;
+
+SELECT
+    *
+FROM employee
+WHERE dno IN (10, 20);
+
+SELECT
+    *
+FROM employee
+WHERE dno NOT IN (20);
+
 
