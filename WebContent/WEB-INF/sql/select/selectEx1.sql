@@ -23,8 +23,13 @@ SELECT ename, salary, commission, NVL(commission, 0) FROM employee;
 SELECT ename, salary + NVL(commission, 0) FROM employee;
 SELECT ename, salary + NVL(commission, 0) гу FROM employee;
 
+SELECT distinct(dno) FROM employee;
+SELECT 
+  distinct dno 
+FROM employee;
 
-/*
-SELECT [DISTINCT] {*|column[alia]...}
+select 
+  distinct DNO 
+from EMPLOYEE;
 
-*/
+
