@@ -8,7 +8,7 @@ String name = request.getParameter("name");
 if (name == null) {
   name = ""; 
 }
-
+name = name.toUpperCase();
 List<String> list = EmployeeDao.getNameLike(name); 
 %>
 
