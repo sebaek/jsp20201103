@@ -9,6 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
+	public static List<String> getNameList(String name, boolean asc) {
+		List<String> list = new ArrayList<>();
+		String sql = "SELECT ename "
+				+ "FROM employee "
+				+ "WHERE "
+				+ "ename LIKE '%" + name + "%' "
+				+ "ORDER BY ename "; 
+		if (asc) {
+			sql += "ASC";
+		} else {
+			sql += "DESC";
+		}
+		
+		
+		return list;
+	}
+	
 	public static List<String> getNameLike(String name) {
 		List<String> list = new ArrayList<>();
 		
