@@ -9,6 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
+	public static List<String> getNameLike(String name) {
+		List<String> list = new ArrayList<>();
+		
+		String sql = "SELECT ename "
+				+ "FROM employee "
+				+ "WHERE "
+				+ "ename LIKE '%" + name + "%'";
+		
+		
+		return list;
+	}
+	
+	
 	public static List<String> listEmployeeName() {
 		List<String> list = new ArrayList<>();
 		Connection conn = null;
