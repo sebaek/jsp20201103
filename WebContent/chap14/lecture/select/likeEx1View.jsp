@@ -9,7 +9,7 @@ if (name == null) {
   name = ""; 
 }
 
-List<String> list = EmployeeDao.getNameLike(name);
+List<String> list = EmployeeDao.getNameLike(name); 
 %>
 
 <!DOCTYPE html>
