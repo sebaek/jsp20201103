@@ -22,6 +22,34 @@ public class EmployeeDao {
 			sql += "DESC";
 		}
 		
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		String user = "c##mydbms";
+		String password = "admin";
+		// 1. 드라이버 로딩
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// 2. 연결
+		// 3. statment
+		try (
+				Connection conn = DriverManager.getConnection(url, user, password);
+				Statement stmt = conn.createStatement();
+				) {
+			// 4. 쿼리
+			ResultSet rs = stmt.executeQuery(sql);
+			// 5. 처리
+			while (rs.next()) {
+				list.add(rs.getString("ename"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		
 		return list;
 	}
