@@ -4,12 +4,12 @@
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-String sql = "SELECT commission FROM employee WHERE eno = 7369";
+String sql = "SELECT hiredate FROM employee WHERE eno = 7369";
 String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 String user = "c##mydbms";
 String pw = "admin";
 
-int commission = 0;
+java.sql.Date hireDate = null;
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -19,7 +19,7 @@ try (Connection conn = DriverManager.getConnection(url, user, pw);
   ResultSet rs = stmt.executeQuery(sql);
   
   if (rs.next()) {
-  	commission = rs.getInt("commission"); 
+  	hireDate = rs.getDate("hiredate"); 
   }
 } catch (Exception e) {
   e.printStackTrace(); 
@@ -36,7 +36,7 @@ try (Connection conn = DriverManager.getConnection(url, user, pw);
 <title>Insert title here</title>
 </head>
 <body>
-<h1>commission: <%= commission %></h1>
+<h1>hireDate: <%= hireDate %></h1>
 </body>
 </html>
 
