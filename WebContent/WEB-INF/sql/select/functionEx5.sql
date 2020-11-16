@@ -35,5 +35,13 @@ SELECT ename, salary, CASE WHEN salary >= 3000 THEN 'HIGH'
 FROM employee;
 
 
-
-
+select * from employee where eno = 7499;
+SELECT salary * 12 + NVL(commission, 0) AS sal, ename
+             FROM employee 
+             WHERE eno = 7499;
+             
+             
+             
+             
+             
+             
