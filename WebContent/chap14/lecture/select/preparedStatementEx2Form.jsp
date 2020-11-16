@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>부서별 봉급 통계 보기</h1>
-<form action="prearedStatementEx2View.jsp">
+<form action="preparedStatementEx2View.jsp">
 <select name="dno" id="">
 	<option value="10">10</option>
 	<option value="20">20</option>
