@@ -1,13 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 String job = request.getParameter("job");
 String sql = "SELECT max(salary), min(salary), avg(salary)" 
            + ", sum(salary) "
+           + "FROM employee "
            + "WHERE job = '" + job + "' ";
 // 1~7
+Class.forName("oracle.jdbc.driver.OracleDriver");
+String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+String id = "c##mydbms";
+String pw = "admin";
+
+Connection con = DriverManager.getConnection(url, id, pw);
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery(sql);
+
+int max = 0;
+int min = 0;
+double avg = 0.0;
+int sum = 0;
+if (rs.next()) {
+  max = rs.getInt(1);
+  min = rs.getInt(2);
+  avg = rs.getDouble(3);
+  sum = rs.getInt(4);
+}
+
+stmt.close();
+con.close();
+
 
 %>
 <!DOCTYPE html>
