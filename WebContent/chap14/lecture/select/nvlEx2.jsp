@@ -25,6 +25,23 @@ String sql = "SELECT ename, salary*12+NVL(commission, 0) "
            + "FROM employee";
 List<Emp> list = new ArrayList<>();
 // 1~7
+Class.forName("oracle.jdbc.driver.OracleDriver");
+String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+String id = "c##mydbms";
+String pw = "admin";
+Connection con = DriverManager.getConnection(url, id, pw);
+Statement stmt = con.createStatement();
+
+ResultSet rs = stmt.executeQuery(sql);
+while (rs.next()) {
+  Emp emp = new Emp();
+  emp.setEname(rs.getString(1));
+  emp.setSal(rs.getInt(2));
+  list.add(emp); 
+}
+
+stmt.close();
+con.close();
 
 %>
 
