@@ -33,7 +33,9 @@ SELECT e.eno, e.ename, e.dno, d.dname
 FROM employee e, department d
 WHERE e.dno = d.dno;
 
-
-
+-- join
+SELECT * FROM employee natural join department;
+SELECT * FROM employee natural join department
+WHERE eno = 7782;
 
 
