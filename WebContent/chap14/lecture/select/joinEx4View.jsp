@@ -13,19 +13,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>사번으로 봉급 등급 검색</h1>
-<form action="joinEx3View.jsp">
-사번 : <input type="number" name="eno" id="" />
-<br />
-<input type="submit" value="검색" />
-</form>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
