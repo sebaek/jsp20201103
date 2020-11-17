@@ -13,6 +13,25 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>봉급 등급별 사원 검색</h1>
+<form action="joinEx4View.jsp">
+<select name="grade" id="">
+	<option value="1">1등급</option>
+	<option value="2">2등급</option>
+	<option value="3">3등급</option>
+	<option value="4">4등급</option>
+	<option value="5">5등급</option>
+</select>
+<br />
+<input type="submit" value="검색" />
+</form>
 
 </body>
 </html>
+
+
+
+
+
+
+

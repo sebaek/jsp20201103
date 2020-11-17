@@ -10,6 +10,11 @@
  AND e.salary BETWEEN s.losal AND s.hisal
  AND e.eno = 7788;
  
+ SELECT e.ename FROM employee e, salgrade s
+ WHERE e.salary BETWEEN s.losal AND s.hisal
+ AND s.grade = 4;
+ 
+ DESC salgrade;
  
  
  
