@@ -40,5 +40,12 @@ WHERE eno = 7788;
 
 -- join using
 SELECT * FROM employee JOIN department USING(dno);
+SELECT * FROM employee JOIN department USING(dno)
+WHERE eno = 7788;
+
+-- join on
+SELECT * FROM employee e JOIN department d ON e.dno = d.dno;
+SELECT * FROM employee e JOIN department d ON e.dno = d.dno
+WHERE eno = 7788;
 
 
