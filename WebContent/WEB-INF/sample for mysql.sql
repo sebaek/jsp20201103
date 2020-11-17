@@ -1,28 +1,50 @@
---------------------------------------------------------
---  ������ ������ - ȭ����-11��-17-2020   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Table EMPLOYEE
---------------------------------------------------------
+-- use mydb;
+drop table salgrade;
+drop table employee;
+drop table department;
 
-  CREATE TABLE "C##MYDBMS"."EMPLOYEE" 
-   (	"ENO" NUMBER(4,0), 
-	"ENAME" VARCHAR2(10 BYTE), 
-	"JOB" VARCHAR2(9 BYTE), 
-	"MANAGER" NUMBER(4,0), 
-	"HIREDATE" DATE, 
-	"SALARY" NUMBER(7,2), 
-	"COMMISSION" NUMBER(7,2), 
-	"DNO" NUMBER(2,0)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
-REM INSERTING into C##MYDBMS.EMPLOYEE
-SET DEFINE OFF;
+create table salgrade (
+	grade int,
+    losal int,
+    hisal int
+);
+
+insert into salgrade values (1,	700,	1200);
+insert into salgrade values (2,	1201,	1400);
+insert into salgrade values (3,	1401,	2000);
+insert into salgrade values (4,	2001,	3000);
+insert into salgrade values (5,	3001,	9999);
+commit;
+
+
+create table department (
+	dno int(2) primary key,
+    dname varchar(14),
+    loc varchar(13)
+);
+
+insert into department values (10,	'ACCOUNTING',	'NEW YORK');
+insert into department values (20,	'RESEARCH',	'DALLAS');
+insert into department values (30,	'SALES',	'CHICAGO');
+insert into department values (40,	'OPERATIONS',	'BOSTON');
+commit;
+
+
+CREATE TABLE employee (
+	eno int(4),
+    ename varchar(10),
+    job varchar(9),
+    manager int(4),
+    hiredate timestamp,
+    salary double(7, 2),
+    commission double(7, 2),
+    dno int(2),
+    primary key (eno),
+    FOREIGN KEY (dno) REFERENCES department(dno)
+);
+
+
+
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7369,'SMITH','CLERK',7902,str_to_date('1980,12,17','%Y,%m,%d'),800,null,20);
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7499,'ALLEN','SALESMAN',7698,str_to_date('1981,02,20','%Y,%m,%d'),1600,300,30);
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7521,'WARD','SALESMAN',7698,str_to_date('1981,02,22','%Y,%m,%d'),1250,500,30);
@@ -37,29 +59,6 @@ Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) valu
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7900,'JAMES','CLERK',7698,str_to_date('1981,12,03','%Y,%m,%d'),950,null,30);
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7902,'FORD','ANALYST',7566,str_to_date('1981,12,03','%Y,%m,%d'),3000,null,20);
 Insert into EMPLOYEE (ENO,ENAME,JOB,MANAGER,HIREDATE,SALARY,COMMISSION,DNO) values (7934,'MILLER','CLERK',7782,str_to_date('1982,01,23','%Y,%m,%d'),1300,null,10);
---------------------------------------------------------
---  DDL for Index PK_EMP
---------------------------------------------------------
+commit;
 
-  CREATE UNIQUE INDEX "C##MYDBMS"."PK_EMP" ON "C##MYDBMS"."EMPLOYEE" ("ENO") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  Constraints for Table EMPLOYEE
---------------------------------------------------------
-
-  ALTER TABLE "C##MYDBMS"."EMPLOYEE" ADD CONSTRAINT "PK_EMP" PRIMARY KEY ("ENO")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table EMPLOYEE
---------------------------------------------------------
-
-  ALTER TABLE "C##MYDBMS"."EMPLOYEE" ADD CONSTRAINT "FK_DEPTNO" FOREIGN KEY ("DNO")
-	  REFERENCES "C##MYDBMS"."DEPARTMENT" ("DNO") ENABLE;
+select * from employee;

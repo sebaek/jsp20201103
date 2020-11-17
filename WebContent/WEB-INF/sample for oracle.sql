@@ -1,33 +1,5 @@
-Rem Copyright (c) 1990 by Oracle Corporation
-Rem NAME
-REM    UTLSAMPL.SQL
-Rem  FUNCTION
-Rem  NOTES
-Rem  MODIFIED
-Rem	gdudey	   06/28/95 -  Modified for desktop seed database
-Rem	glumpkin   10/21/92 -  Renamed from SQLBLD.SQL
-Rem	blinden   07/27/92 -  Added primary and foreign keys to EMP and DEPT
-Rem	rlim	   04/29/91 -	      change char to varchar2
-Rem	mmoore	   04/08/91 -	      use unlimited tablespace priv
-Rem	pritto	   04/04/91 -	      change SYSDATE to 13-JUL-87
-Rem   Mendels	 12/07/90 - bug 30123;add to_date calls so language independent
-Rem
-rem
-rem $Header: utlsampl.sql 7020100.1 94/09/23 22:14:24 cli Generic<base> $ sqlbld.sql
-rem
---SET TERMOUT OFF
---SET ECHO OFF
-
-rem CONGDON    Invoked in RDBMS at build time.	 29-DEC-1988
-rem OATES:     Created: 16-Feb-83
-
---show con_name;
---
---GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO SCOTT IDENTIFIED BY TIGER;
---ALTER USER C##SCOTT DEFAULT TABLESPACE USERS;
---ALTER USER C##SCOTT TEMPORARY TABLESPACE TEMP;
---CONNECT C##SCOTT/TIGER
---DROP TABLE DEPT;
+DROP TABLE EMPLOYEE;
+DROP TABLE DEPARTMENT;
 CREATE TABLE DEPT
        (DEPTNO NUMBER(2) CONSTRAINT PK_DEPT PRIMARY KEY,
 	DNAME VARCHAR2(14) ,
@@ -113,10 +85,10 @@ ALTER TABLE EMP RENAME COLUMN DEPTNO TO DNO;
 
 COMMIT;
 
-DROP TABLE EMPLOYEE;
+--DROP TABLE EMPLOYEE;
 RENAME EMP TO EMPLOYEE;
 
-DROP TABLE DEPARTMENT;
+--DROP TABLE DEPARTMENT;
 RENAME DEPT TO DEPARTMENT;
 
 COMMIT;
