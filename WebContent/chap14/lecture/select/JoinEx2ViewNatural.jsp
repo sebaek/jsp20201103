@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+String sql = "SELECT d.dname " 
+           + "FROM employee e NATURAL JOIN department d "
+           + "WHERE e.eno = ?";
+%>
 <!DOCTYPE html>
 <html>
 <head>
