@@ -10,7 +10,7 @@ String eno = request.getParameter("eno");
 String sql = "SELECT e.eno, e.ename, e.job, m.ename " 
            + " , e.hiredate, e.salary, d.dname, s.grade "
            + "FROM employee e, employee m, department d, salgrade s "
-           + "WHERE e.manager = m.eno" 
+           + "WHERE e.manager = m.eno(+)" 
            + " AND e.dno = d.dno "
            + " AND e.salary BETWEEN s.losal AND s.hisal "
            + " AND e.eno = ?";
