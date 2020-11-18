@@ -23,6 +23,9 @@ String managerName = "없음";
 if (rs.next()) {
   managerName = rs.getString(1); 
 }
+
+pstmt.close();
+con.close();
 %>
 <!DOCTYPE html>
 <html>
