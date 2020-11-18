@@ -10,8 +10,14 @@ public class Employee {
 	private String dname;
 	private String job;
 	private int grade;
+	private String managerName;
 	
-	
+	public String getManagerName() {
+		return managerName;
+	}
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
 	
 	public int getGrade() {
 		return grade;

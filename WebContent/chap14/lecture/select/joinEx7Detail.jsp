@@ -7,10 +7,11 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 String eno = request.getParameter("eno");
-String sql = "SELECT e.eno, e.ename, e.job, " 
-           + " e.hiredate, e.salary, d.dname, s.grade "
-           + "FROM employee e, department d, salgrade s "
-           + "WHERE e.dno = d.dno "
+String sql = "SELECT e.eno, e.ename, e.job, m.ename " 
+           + " , e.hiredate, e.salary, d.dname, s.grade "
+           + "FROM employee e, employee m, department d, salgrade s "
+           + "WHERE e.manager = m.eno" 
+           + " AND e.dno = d.dno "
            + " AND e.salary BETWEEN s.losal AND s.hisal "
            + " AND e.eno = ?";
 
@@ -32,6 +33,7 @@ if (rs.next()) {
   emp.setEno(rs.getInt(col++));
   emp.setEname(rs.getString(col++));
   emp.setJob(rs.getString(col++));
+  emp.setManagerName(rs.getString(col++));
   emp.setHireDate(rs.getTimestamp(col++).toLocalDateTime());
   emp.setSalary(rs.getInt(col++));
   emp.setDname(rs.getString(col++));
@@ -58,6 +60,7 @@ if (rs.next()) {
     <li>이름 : <%= emp.getEname() %></li>
     <li>업무 : <%= emp.getJob() %></li>
     <li>입사일 : <%= emp.getHireDate() %></li>
+    <li>매니저 : <%= emp.getManagerName() %></li>
     <li>월급 : <%= emp.getSalary() %></li>
     <li>등급 : <%= emp.getGrade() %></li>
     <li>부서 : <%= emp.getDname() %></li>
