@@ -35,7 +35,21 @@ WHERE dno IN (SELECT dno
               FROM department
               WHERE dno <= 20);
 
-
+SELECT eno, ename
+FROM employee
+WHERE salary IN (SELECT MIN(salary)
+                 FROM employee
+                 GROUP BY dno);
+                 
+SELECT eno, ename
+FROM employee
+WHERE (dno, salary) IN (SELECT dno, MIN(salary)
+                         FROM employee
+                         GROUP BY dno);
+                 
+SELECT dno, MIN(salary)
+FROM employee
+GROUP BY dno;
 
 
 
