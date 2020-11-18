@@ -9,8 +9,16 @@ public class Employee {
 	private int salary;
 	private String dname;
 	private String job;
+	private int grade;
 	
 	
+	
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
 	public String getJob() {
 		return job;
 	}

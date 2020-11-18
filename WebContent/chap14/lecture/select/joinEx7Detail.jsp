@@ -8,9 +8,10 @@
 <%
 String eno = request.getParameter("eno");
 String sql = "SELECT e.eno, e.ename, e.job, " 
-           + " e.hiredate, e.salary, d.dname "
-           + "FROM employee e, department d "
+           + " e.hiredate, e.salary, d.dname, s.grade "
+           + "FROM employee e, department d, salgrade s "
            + "WHERE e.dno = d.dno "
+           + " AND e.salary BETWEEN s.losal AND s.hisal "
            + " AND e.eno = ?";
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -34,6 +35,7 @@ if (rs.next()) {
   emp.setHireDate(rs.getTimestamp(col++).toLocalDateTime());
   emp.setSalary(rs.getInt(col++));
   emp.setDname(rs.getString(col++));
+  emp.setGrade(rs.getInt(col++));
 }
 
 %>
@@ -57,6 +59,7 @@ if (rs.next()) {
     <li>업무 : <%= emp.getJob() %></li>
     <li>입사일 : <%= emp.getHireDate() %></li>
     <li>월급 : <%= emp.getSalary() %></li>
+    <li>등급 : <%= emp.getGrade() %></li>
     <li>부서 : <%= emp.getDname() %></li>
   </ul>
 </div>
