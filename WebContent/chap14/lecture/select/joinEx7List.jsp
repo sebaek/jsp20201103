@@ -50,7 +50,11 @@ con.close();
     for (Employee emp : list) {
     %>
       <tr>
-        <td><%= emp.getEno() %></td>
+        <td>
+          <a href="joinEx7Detail.jsp?eno=<%= emp.getEno() %>">
+            <%= emp.getEno() %>
+          </a>
+        </td>
         <td><%= emp.getEname() %></td>
       </tr>
     <%
