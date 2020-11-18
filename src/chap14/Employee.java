@@ -8,7 +8,15 @@ public class Employee {
 	private LocalDateTime hireDate;
 	private int salary;
 	private String dname;
+	private String job;
 	
+	
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
 	public LocalDateTime getHireDate() {
 		return hireDate;
 	}

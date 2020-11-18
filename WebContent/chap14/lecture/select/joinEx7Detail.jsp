@@ -7,7 +7,7 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 String eno = request.getParameter("eno");
-String sql = "SELECT e.eno, e.ename, " 
+String sql = "SELECT e.eno, e.ename, e.job, " 
            + " e.hiredate, e.salary, d.dname "
            + "FROM employee e, department d "
            + "WHERE e.dno = d.dno "
@@ -26,12 +26,14 @@ ResultSet rs = pstmt.executeQuery();
 Employee emp = null;
 
 if (rs.next()) {
+  int col = 1;
   emp = new Employee();
-  emp.setEno(rs.getInt(1));
-  emp.setEname(rs.getString(2));
-  emp.setHireDate(rs.getTimestamp(3).toLocalDateTime());
-  emp.setSalary(rs.getInt(4));
-  emp.setDname(rs.getString(5));
+  emp.setEno(rs.getInt(col++));
+  emp.setEname(rs.getString(col++));
+  emp.setJob(rs.getString(col++));
+  emp.setHireDate(rs.getTimestamp(col++).toLocalDateTime());
+  emp.setSalary(rs.getInt(col++));
+  emp.setDname(rs.getString(col++));
 }
 
 %>
@@ -52,6 +54,7 @@ if (rs.next()) {
   <ul>
     <li>사번 : <%= emp.getEno() %></li>
     <li>이름 : <%= emp.getEname() %></li>
+    <li>업무 : <%= emp.getJob() %></li>
     <li>입사일 : <%= emp.getHireDate() %></li>
     <li>월급 : <%= emp.getSalary() %></li>
     <li>부서 : <%= emp.getDname() %></li>
