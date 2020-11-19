@@ -2,6 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+
+<jsp:useBean id="car" class="chap08.Car"></jsp:useBean>
+<%
+//car.setName("kia");
+%>
+<jsp:setProperty name="car" property="name" value="kia"></jsp:setProperty>
+<jsp:setProperty name="car" property="speed" value="90" />
+<%--
+ <jsp:setProperty name="car" property="stop" value="false" />
+ --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +24,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%= car.getName() %> <br />
+<%= car.getSpeed() %>
 </body>
 </html>
+
+
+
+
+
