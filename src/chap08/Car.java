@@ -7,7 +7,7 @@ public class Car {
 	
 	
 	// stop
-	public boolean getStop() { // isStop
+	public boolean isStop() { // isStop
 		return speed == 0;
 	}
 	
