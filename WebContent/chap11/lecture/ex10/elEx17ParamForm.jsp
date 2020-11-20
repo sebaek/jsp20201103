@@ -2,24 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<%--
-책 254쪽
-pageContext 
-
-pageScope : Map
-requestScope : Map
-sessionScope : Map
-applicationScope : Map
-
-param : Map
-paramValues : Map
-
-header : Map
-headerValues : Map
-cookie : Map
-initParam : Map
- --%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,19 +13,19 @@ initParam : Map
 <title>Insert title here</title>
 </head>
 <body>
-${pageContext } <br />
-${pageScope } <br />
-${requestScope } <br />
-${sessionScope } <br />
-${applicationScope } <br />
-${param } <br />
-${paramValues } <br />
-${header } <br />
-${headerValues } <br />
-${cookie } <br />
-${initParam } <br />
+
+<form action="elEx17ParamView.jsp" method="post">
+이름 : <input type="text" name="name" /> <br />
+암호 : <input type="text" name="password" /> <br />
+이메일 : <input type="text" name="email" /> <br />
+
+<input type="submit" value="등록" />
+
+</form>
 </body>
 </html>
+
+
 
 
 
