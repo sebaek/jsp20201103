@@ -2,9 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<jsp:useBean id="member" class="chap08.member.MemberInfo">
-  <jsp:setProperty name="member" property="*" />
-</jsp:useBean>
+<%
+String[] strs = {"ab", "cd", "ef", "gh"};
+pageContext.setAttribute("list", strs);
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -17,23 +19,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-name : ${member.name } <br />
-id : ${member.id } <br />
-pw : ${member.password } <br />
-email : ${member.email } <br />
-<hr />
-name : ${member["name"] } <br />
-id : ${member["id"] } <br />
-pw : ${member["password"] } <br />
-email : ${member["email"] } <br />
+${list[0] } <br />
+${list[1] } <br />
+${list[2] } <br />
+${list[3] } <br />
+${list[4] } <br />
 
 </body>
+
+
+
+
+
 </html>
-
-
-
-
-
-
-
-

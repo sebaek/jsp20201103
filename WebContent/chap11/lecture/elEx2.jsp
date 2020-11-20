@@ -40,7 +40,7 @@ ${car.name }
 ${car2 }
 
 <br />
-${car3 }
+${car }
 </body>
 
 

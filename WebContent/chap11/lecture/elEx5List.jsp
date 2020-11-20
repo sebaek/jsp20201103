@@ -2,9 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<jsp:useBean id="member" class="chap08.member.MemberInfo">
-  <jsp:setProperty name="member" property="*" />
-</jsp:useBean>
+<%
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("jsp");
+list.add("servlet");
+list.add("html");
+list.add("css");
+
+request.setAttribute("mylist", list);
+%>
 
 <!DOCTYPE html>
 <html>
@@ -17,18 +24,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-name : ${member.name } <br />
-id : ${member.id } <br />
-pw : ${member.password } <br />
-email : ${member.email } <br />
+${mylist }
 <hr />
-name : ${member["name"] } <br />
-id : ${member["id"] } <br />
-pw : ${member["password"] } <br />
-email : ${member["email"] } <br />
-
+${mylist[0] } <br />
+${mylist[1] } <br />
+${mylist[2] } <br />
+<hr />
+<%--
+${mylist.0 } <br />
+ --%>
+<hr />
+${mylist["0"] } <br />
+${mylist["1"] } <br />
+${mylist["2"] } <br />
 </body>
 </html>
+
+
+
+
 
 
 
