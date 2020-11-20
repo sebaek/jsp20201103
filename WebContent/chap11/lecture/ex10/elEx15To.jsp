@@ -13,6 +13,36 @@
 <title>Insert title here</title>
 </head>
 <body>
+${pageAttr1 } <br />
+<hr />
+${requestScope["req Attr1"] } <br />
+${reqAttr2 } <br />
+
+<hr />
+
+${sesAttr2 } <br />
+${sessionScope.reqAttr2 } <br />
+
+<hr />
+${applicationScope.reqAttr2 } <br />
+${appAttr1 } <br />
+${applicationScope["app Attr3"] } <br />
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
