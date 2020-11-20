@@ -3,22 +3,19 @@
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <%--
-책 254쪽
-pageContext 
-
-pageScope : Map
-requestScope : Map
-sessionScope : Map
-applicationScope : Map
-
-param : Map
-paramValues : Map
-header : Map
-headerValues : Map
-cookie : Map
-initParam : Map
+각 영역의 attribute를 <name, object>쌍으로 가지고 있는 map
+pageScope
+requestScope
+sessionScope
+applicationScope
  --%>
+<%
+pageContext.setAttribute("myAttr1", "my Value1!!!!!");
+pageContext.setAttribute("my attr1", "my value1");
 
+request.setAttribute("myAttr1", "my request Value1!!!!!");
+request.setAttribute("myAttr2", "my Value2!!!!!!");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,19 +27,14 @@ initParam : Map
 <title>Insert title here</title>
 </head>
 <body>
-${pageContext } <br />
-${pageScope } <br />
-${requestScope } <br />
-${sessionScope } <br />
-${applicationScope } <br />
-${param } <br />
-${paramValues } <br />
-${header } <br />
-${headerValues } <br />
-${cookie } <br />
-${initParam } <br />
+${myAttr1 } <br />
+${pageScope["my attr1"] } <br />
+${myAttr2 } <br />
+${requestScope.myAttr1 } <br />
 </body>
 </html>
+
+
 
 
 

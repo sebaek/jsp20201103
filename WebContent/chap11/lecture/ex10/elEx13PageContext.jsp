@@ -24,6 +24,10 @@ ${pageContext.servletConfig } <br />
 ${pageContext.request.contextPath } <br />
 ${pageContext.request.cookies[0].name } <br />
 ${pageContext.request.cookies[0].value } <br />
+
+<hr />
+${pageContext.request } <br />
+<%= pageContext.getRequest() %>
 </body>
 </html>
 
