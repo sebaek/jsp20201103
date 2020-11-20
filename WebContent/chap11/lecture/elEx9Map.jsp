@@ -2,6 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+Map<String, String> map = new HashMap<>();
+map.put("a", "java");
+map.put("b", "html");
+map.put("c", "css");
+map.put("3", "servlet");
+map.put("class", "spring");
+map.put("my key", "my value");
+
+
+request.setAttribute("mymap", map);
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +27,27 @@
 <title>Insert title here</title>
 </head>
 <body>
+${mymap } 
+<hr />
+${mymap.a } <br />
+${mymap.b } <br />
+${mymap.c } <br />
+${mymap["3"] } <br />
+${mymap["class"] } <br />
+${mymap["my key"] } <br />
+<br />
+${mymap['3'] } <br />
+${mymap['class'] } <br />
+${mymap['my key'] } <br />
 
+<hr />
+${mymap["a"] } <br />
+${mymap[b] } <br />
+${mymap[c] } <br />
 </body>
 </html>
+
+
+
+
+
