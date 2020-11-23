@@ -14,26 +14,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-pageContext.setAttribute("myvar1", "my value1");
-String myVal3 = "hello";
-%>
-<c:set var="myvar2" value="my value2"></c:set>
-<c:set var="myvar3" value="<%= myVal3  %>"></c:set>
-<c:set var="myvar4" value="${myvar2 }" ></c:set>
-<c:set var="myvar5" >
-  <h1>hello world!!!!!</h1>
-</c:set>
-
-
-${myvar1 } <br />
-${myvar2 } <br />
-${myvar3 } <br />
-${myvar4 } <br />
-${myvar5 } <br />
+<h1>core set tag 연습</h1>
+<form action="jstlEx06View.jsp">
+id : <input type="text" name="id" /> <br />
+pw : <input type="text" name="pw" /> <br />
+<input type="submit" value="등록" />
+</form>
 </body>
 </html>
-
 
 
 

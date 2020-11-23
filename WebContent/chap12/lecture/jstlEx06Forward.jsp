@@ -14,28 +14,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-pageContext.setAttribute("myvar1", "my value1");
-String myVal3 = "hello";
-%>
-<c:set var="myvar2" value="my value2"></c:set>
-<c:set var="myvar3" value="<%= myVal3  %>"></c:set>
-<c:set var="myvar4" value="${myvar2 }" ></c:set>
-<c:set var="myvar5" >
-  <h1>hello world!!!!!</h1>
-</c:set>
-
-
-${myvar1 } <br />
-${myvar2 } <br />
-${myvar3 } <br />
-${myvar4 } <br />
-${myvar5 } <br />
+id, pw 등록 가능 : ${ok } 
 </body>
 </html>
-
-
-
 
 
 
