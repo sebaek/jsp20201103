@@ -14,15 +14,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true" >
-  <h1>실행</h1>
+${param.name } 님의 추천 영화 
+
+<c:if test="${param.age < 15 }" >
+  어벤져스
 </c:if>
 
-<c:if test="false" >
-  <h1>no 실행</h1>
+<c:if test="${param.age >= 15 }" >
+  제임스 본드
 </c:if>
-
-
 </body>
 </html>
 
