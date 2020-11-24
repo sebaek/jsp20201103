@@ -14,6 +14,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+제목 :
+<input type="text" readonly value="${list[param.id].title }" />
+<br />
+<textarea cols="30" rows="3" 
+  readonly>${list[param.id].body }</textarea>
 
 </body>
 </html>
+
+
+
+
+
+

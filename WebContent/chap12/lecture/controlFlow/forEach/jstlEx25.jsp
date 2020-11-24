@@ -30,8 +30,12 @@
 
 <c:if test="${not empty list }" >
 <ul>
-  <c:forEach items="${list }" var="item" >
-    <li>${item.title }</li>
+  <c:forEach items="${list }" var="item" varStatus="stat">
+    <li>
+      <a href="jstlEx25Detail.jsp?id=${stat.index }">
+        ${item.title }
+      </a>
+    </li>
   </c:forEach>
 </ul>
 </c:if>
