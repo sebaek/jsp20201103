@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
@@ -14,21 +15,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-제목 :
-<input type="text" readonly value="${list[param.id].title }" />
-<br />
-<textarea cols="30" rows="3" 
-  readonly>${list[param.id].body }</textarea>
-
-<hr />
-
+<%
+FileReader reader = null;
+try {
+ String path = "/chap12/use_out_tag.jsp";
+ reader = new FileReader(application.getRealPath(path));
+%>
 <pre>
-<c:out value="${list[param.id].body }" />
+소스 코드 = <%= path %>
+<c:out value="<%= reader %>" escapeXml="true" />
 </pre>
+<%
+} catch (IOException e) {
+%>
+에러 : <%= e.getMessage() %> 
+<%
+} finally {
+  if (reader != null) {
+  	try {
+      reader.close();  
+    } catch (IOException e) {
+      e.printStackTrace(); 
+    }
+  }
+}
+%>
 
 </body>
 </html>
-
 
 
 

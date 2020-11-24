@@ -14,21 +14,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-제목 :
-<input type="text" readonly value="${list[param.id].title }" />
-<br />
-<textarea cols="30" rows="3" 
-  readonly>${list[param.id].body }</textarea>
-
-<hr />
-
-<pre>
-<c:out value="${list[param.id].body }" />
-</pre>
-
+<c:url value="jstlEx01.jsp" var="myUrl" >
+  <c:param name="id" value="3" />
+  <c:param name="name" value="john" />
+</c:url>
+<a href="${myUrl }">예제 01</a>
 </body>
 </html>
-
 
 
 
