@@ -39,7 +39,8 @@ mapData.put("today", new Date());
 
 <h4>int형 배열</h4>
 
-<c:forEach var="i" items="${intArray }" begin="2" end="4" varStatus="status">
+<c:forEach var="i" items="${intArray }" 
+           begin="2" end="4" varStatus="status">
   ${status.index } - ${status.count } - [${i }] <br />
 </c:forEach>
 
