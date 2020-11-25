@@ -2,6 +2,11 @@
 <%@ attribute name="title" required="true"%>
 <%@ attribute name="level" type="java.lang.Integer"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+Integer level = get();
+jspContext.setAttribute("level", level);
+%>
+
 
 <%
 	String headStartTag = null;
@@ -24,6 +29,7 @@
 <%= headStartTag %>
 ${title}
 <%= headEndTag %>
-
+<hr />
+${level }
 
 
