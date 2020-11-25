@@ -25,7 +25,7 @@ list.add("About");
 request.setAttribute("menus", list);
 %>
 
-<my:ex9navbar></my:ex9navbar>
+<my:ex9navbar form="false"></my:ex9navbar>
 </body>
 </html>
 
