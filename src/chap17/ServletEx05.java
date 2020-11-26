@@ -38,9 +38,12 @@ public class ServletEx05 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String name = request.getParameter("name");
 		String age = request.getParameter("age");
 		String email = request.getParameter("email");
 		
+		System.out.println(name);
 		System.out.println(age);
 		System.out.println(email);
 		
