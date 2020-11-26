@@ -1,28 +1,23 @@
 package chap17;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ServletEx04
+ * Servlet implementation class ServletEx05
  */
-@WebServlet("/ex04")
-public class ServletEx04 extends HttpServlet {
+@WebServlet("/ex05")
+public class ServletEx05 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletEx04() {
+    public ServletEx05() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,20 +27,10 @@ public class ServletEx04 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// jsp의 기본객체 (114 쪽)
-		// request, session, application, config
-		// response, out
-		// pageContext, page
-		
-		HttpSession session = request.getSession();
-		ServletContext application = request.getServletContext();
-		application = getServletContext();
-		ServletConfig config = getServletConfig();
-		
-		PrintWriter out = response.getWriter();
-		
-		System.out.println("ex04 servlet doGet method");
-		System.out.println(request.getParameter("id"));
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		System.out.println(id);
+		System.out.println(name);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -53,8 +38,13 @@ public class ServletEx04 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String age = request.getParameter("age");
+		String email = request.getParameter("email");
+		
+		System.out.println(age);
+		System.out.println(email);
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 }
