@@ -29,8 +29,11 @@ public class ServletEx11 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("servelt 11 doget method");
+		// curPath = "localhost:8080/myjsp/ex11"
+		//     jsp = "localhost:8080/myjsp/chap17/lecture/servletEx11View.jsp"
+//		String path = "/chap17/lecture/servletEx11View.jsp";
+		String path = "chap17/lecture/servletEx11View.jsp";
 		
-		String path = "";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
