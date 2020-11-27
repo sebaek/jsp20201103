@@ -15,6 +15,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="container">
+  <h1>글 보기</h1>
+  제목 : <input type="text" readonly value="${post.title }" /> <br />
+  <textarea readonly cols="30" rows="5">${post.body }</textarea>
+</div>
 </body>
 </html>
+
+
+
+
