@@ -1,8 +1,10 @@
 package chap17.sample2;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +19,7 @@ import chap05.Post;
 @WebServlet("/sample2/form")
 public class FormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+  private List<Post> list;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,6 +28,22 @@ public class FormServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    @Override
+    public void init() throws ServletException {
+    	// TODO Auto-generated method stub
+    	ServletContext application = getServletContext();
+    	Object obj = application.getAttribute("posts");
+    	
+    	if (obj == null) {
+    		list = new ArrayList<>();
+    		application.setAttribute("posts", list);
+    	} else {
+    		list = (List<Post>) obj;
+    	}
+    	
+    	super.init();
+    }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
