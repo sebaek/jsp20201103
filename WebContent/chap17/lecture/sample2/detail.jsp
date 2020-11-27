@@ -21,7 +21,7 @@ $(function() {
 		$(this).hide();
 		$("#submit-btn").removeAttr("hidden");
 	});
-})
+});
 </script>
 </head>
 <body>
@@ -33,8 +33,8 @@ $(function() {
   <h1>글 보기</h1>
   <form action="${modifyUrl }" method="post">
   
-  제목 : <input id="title-input" type="text" readonly value="${post.title }" /> <br />
-  <textarea id="body-textarea" readonly cols="30" rows="5">${post.body }</textarea>
+  제목 : <input id="title-input" name="title" type="text" readonly value="${post.title }" /> <br />
+  <textarea id="body-textarea" name="body" readonly cols="30" rows="5">${post.body }</textarea>
   <br />
   <input type="submit" id="submit-btn"
          hidden value="등록" 
