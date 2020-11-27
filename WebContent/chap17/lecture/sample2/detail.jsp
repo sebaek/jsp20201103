@@ -15,18 +15,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-  <h1>글 목록</h1>
-  <ul>
-    <c:forEach items="${posts }" var="post" varStatus="status">
-      <li><a href="<%=request.getContextPath() %>/sample2/detail?idx=${status.index }">${post.title }</a></li>
-    </c:forEach>
-  </ul>
-</div>
+
 </body>
 </html>
-
-
-
-
-
