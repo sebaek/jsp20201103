@@ -55,6 +55,7 @@ public class SignUpProcess extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("formId", id);
 			session.setAttribute("formPw", pw);
+			session.setAttribute("message", "아이디와 패스워드가 일치합니다.");
 			
 			String path = request.getContextPath() + "/sample1/signup";
 			response.sendRedirect(path);

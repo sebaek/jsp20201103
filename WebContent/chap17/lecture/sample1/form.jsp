@@ -16,6 +16,15 @@
 </head>
 <body>
 <div class="container">
+  <c:if test="${not empty message }" >
+    <div class="alert alert-primary" role="alert">
+      ${message }
+    </div>
+    <c:remove var="message" scope="session" />
+  </c:if>
+
+  
+  
   <h1>회원가입</h1>
   <form action="<%= request.getContextPath() %>/sample1/process" method="post">
     id : <input type="text" name="id" value="${formId }"/> <br />
