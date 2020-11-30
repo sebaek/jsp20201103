@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ControllerUsingFile
  */
-@WebServlet("/ControllerUsingFile")
+@WebServlet(value = "/controllerUsingFile",
+	initParams = {
+		@WebInitParam (
+				name="configFile",
+				value="/WEB-INF/commandHandler.properties"
+		)
+})
 public class ControllerUsingFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map<String, CommandHandler> commandHandlerMap 
