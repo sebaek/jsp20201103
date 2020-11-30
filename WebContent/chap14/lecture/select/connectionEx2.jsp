@@ -14,7 +14,7 @@ Statement stmt = null;
 ResultSet rs = null;
 
 //String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-String url = "jdbc:oracle:thin:@mydb501_high?TNS_ADMIN=";
+String url = "jdbc:oracle:thin:@mydb501_high?TNS_ADMIN=C:\\Users\\admin\\Documents\\Wallet_mydb501";
 
 //String id = "c##mydbms";
 String id = "mydb00";
