@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ControllerUsingURI
  */
-@WebServlet("/ControllerUsingURI")
+//@WebServlet("*.do")
 public class ControllerUsingURI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map<String, CommandHandler> commandHandlerMap = 
