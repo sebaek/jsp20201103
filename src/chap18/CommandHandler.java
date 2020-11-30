@@ -1,5 +1,9 @@
 package chap18;
 
-public interface CommandHandler {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+public interface CommandHandler {
+	String process(HttpServletRequest req, HttpServletResponse res)
+			throws Exception;
 }
