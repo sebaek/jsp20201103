@@ -16,7 +16,7 @@ import chap18.complex2.ModelInterface;
 /**
  * Servlet implementation class Complex3Controller
  */
-@WebServlet("/Complex3Controller")
+@WebServlet("/complex3")
 public class Complex3Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
