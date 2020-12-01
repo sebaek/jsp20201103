@@ -37,4 +37,21 @@ SELECT MIN(salary)
 FROM employee
 WHERE dno=30;
 
+-- 다중 행 서브 쿼리
+-- IN
+SELECT MIN(salary)
+FROM employee
+GROUP BY dno;
+
+SELECT eno, ename, salary
+FROM employee
+WHERE salary IN (SELECT MIN(salary)
+                    FROM employee
+                    GROUP BY dno);
+SELECT eno, ename, salary
+FROM employee
+WHERE (dno, salary) IN (SELECT dno, MIN(salary)
+                        FROM employee
+                        GROUP BY dno);
+
 
