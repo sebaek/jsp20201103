@@ -66,4 +66,14 @@ SELECT salary
 FROM employee
 WHERE job='SALESMAN';
 
+-- ALL
+SELECT eno, ename, job, salary
+FROM employee
+WHERE salary < ALL (SELECT salary 
+                    FROM employee
+                    WHERE job='SALESMAN')
+AND job <> 'SALESMAN';
 
+SELECT salary 
+FROM employee
+WHERE job='SALESMAN';
