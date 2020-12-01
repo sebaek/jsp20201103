@@ -229,3 +229,119 @@ WHERE
 12.부서 위치가 DALLAS인 사원의 이름과
 부서번호 및 담당업무를 표시하시오.
 */
+SELECT
+    ename,
+    dno,
+    job
+FROM
+    employee
+WHERE
+    dno = (
+        SELECT
+            dno
+        FROM
+            department
+        WHERE
+            loc = 'DALLAS'
+    );
+
+/*
+13. KING에게 보고하는 사원의
+이름과 급여를 표시하시오.
+*/
+SELECT
+    ename,
+    salary
+FROM
+    employee
+WHERE
+    manager = (
+        SELECT
+            eno
+        FROM
+            employee
+        WHERE
+            ename = 'KING'
+    );
+
+/*
+14. RESEARCH 부서의 사원에 대한 부서번호,
+사원이름 및 업무를 표시하시오.
+*/
+SELECT
+    dno,
+    ename,
+    job
+FROM
+    employee
+WHERE
+    dno = (
+        SELECT
+            dno
+        FROM
+            department
+        WHERE
+            dname = 'RESEARCH'
+    );
+
+/*
+15. 평균 급여보다 많은 급여를 받고 이름에 M이 포함된
+사원과 같은 부서에서 근무하는 사원의 사원번호, 이름,
+급여를 표시하시오.
+*/
+SELECT
+    eno,
+    ename,
+    salary
+FROM
+    employee
+WHERE
+        salary > (
+            SELECT
+                AVG(salary)
+            FROM
+                employee
+        )
+    AND dno IN (
+        SELECT
+            dno
+        FROM
+            employee
+        WHERE
+            ename LIKE '%M%'
+    );
+/*
+16.평균 급여가 가장 적은 업무를 찾으시오
+*/
+SELECT
+    job,
+    AVG(salary)
+FROM
+    employee
+GROUP BY
+    job
+HAVING
+    AVG(salary) = (
+        SELECT
+            MIN(AVG(salary))
+        FROM
+            employee
+        GROUP BY
+            job
+    );
+
+/*
+17. 담당업무가 MANAGER인 사원이 소속된 부서와 동일한 
+부서의 사원을 표시하시오.
+*/
+SELECT
+    ename
+FROM
+    employee
+WHERE
+    eno IN (
+        SELECT
+            manager
+        FROM
+            employee
+    );
