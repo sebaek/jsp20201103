@@ -54,4 +54,16 @@ WHERE (dno, salary) IN (SELECT dno, MIN(salary)
                         FROM employee
                         GROUP BY dno);
 
+-- ANY, SOME
+SELECT eno, ename, job, salary
+FROM employee
+WHERE salary < ANY (SELECT salary
+                    FROM employee
+                    WHERE job='SALESMAN')
+AND job <> 'SALESMAN';
+
+SELECT salary
+FROM employee
+WHERE job='SALESMAN';
+
 
