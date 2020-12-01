@@ -101,3 +101,131 @@ WHERE
         GROUP BY
             dno
     );
+
+/*
+
+6. 담당업무가 분석가(analyst)인 사원보다
+급여가 적으면서 업무가
+분석가(analyst)가 아닌 사원들을
+표시(사원번호, 이름, 업무, 급여)하시오
+*/
+SELECT
+    eno,
+    ename,
+    job,
+    salary
+FROM
+    employee
+WHERE
+    salary < ANY (
+        SELECT
+            salary
+        FROM
+            employee
+        WHERE
+            job = 'ANALYST'
+    )
+    AND job <> 'ANALYST';
+    
+/*
+7. 부하직원이 없는 사원이 이름을 표시하시오.
+*/
+SELECT
+    ename
+FROM
+    employee
+WHERE
+    eno IN (
+        SELECT
+            eno
+        FROM
+            employee
+        WHERE
+            manager IS NULL
+    );
+    
+    
+/*
+8.부하직원이 있는 사원의 이름을 표시하시오
+*/
+SELECT
+    ename
+FROM
+    employee
+WHERE
+    eno IN (
+        SELECT
+            eno
+        FROM
+            employee
+        WHERE
+            manager IS NOT NULL
+    );
+    
+/*
+9. BLAKE와 동일한 부서에 속한 사원의 이름과
+입사일을 표시하는 질의를 작성하시오
+(단 BLAKE는 제외)
+*/
+SELECT
+    ename,
+    hiredate
+FROM
+    employee
+WHERE
+        dno = (
+            SELECT
+                dno
+            FROM
+                employee
+            WHERE
+                ename = 'BLAKE'
+        )
+    AND ename <> 'BLAKE';
+    
+    
+/*
+10. 급여가 평균 급여 보다 많은 사원들의 사원번호와
+이름을 표시하되 결과를 급여에 대해서 오름차수능로
+정렬하시오.
+*/
+
+SELECT
+    eno,
+    ename
+FROM
+    employee
+WHERE
+    salary > (
+        SELECT
+            AVG(salary)
+        FROM
+            employee
+    )
+ORDER BY
+    salary ASC;
+    
+/*
+11. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의
+사원번호와 이름을 표시하는 질의를 작성하시오
+*/
+
+SELECT
+    eno,
+    ename
+FROM
+    employee
+WHERE
+    dno IN (
+        SELECT
+            dno
+        FROM
+            employee
+        WHERE
+            ename LIKE '%K%'
+    );
+    
+/*
+12.부서 위치가 DALLAS인 사원의 이름과
+부서번호 및 담당업무를 표시하시오.
+*/
