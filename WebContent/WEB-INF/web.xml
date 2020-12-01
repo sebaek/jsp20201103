@@ -95,7 +95,7 @@
   
   <filter-mapping>
   	<filter-name>filter01</filter-name>
-  	<url-pattern>/filter/ex1</url-pattern>
+  	<url-pattern>/filter/*</url-pattern>
   </filter-mapping>
 </web-app>
 
