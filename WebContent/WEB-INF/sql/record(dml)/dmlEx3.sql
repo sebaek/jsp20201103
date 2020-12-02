@@ -4,4 +4,6 @@
  body VARCHAR2(3000),
  inserted DATE
  );
+ DESC guest_book;
+ SELECT * FROM guest_book;
  
