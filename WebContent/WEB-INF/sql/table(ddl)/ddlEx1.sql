@@ -30,3 +30,28 @@ SELECT * FROM department;
 
 -- 날짜시간
 -- DATE
+
+
+-- 책 예제 (207쪽)
+CREATE TABLE dept (
+    dno NUMBER(2),
+    dname VARCHAR2(14),
+    loc VARCHAR2(13)
+);
+SELECT * FROM dept;
+DESC dept;
+
+-- 이미 있는 테이블 복사
+-- 1. 같은 구조의 table 만들고
+-- 2. 옛table을 select -> 신table insert
+
+CREATE TABLE new_table
+AS
+SELECT * FROM old_table;
+
+-- 책 예제 (207쪽)
+
+
+
+
+
