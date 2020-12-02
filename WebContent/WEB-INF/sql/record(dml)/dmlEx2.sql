@@ -62,4 +62,23 @@ COMMIT;
 SELECT * FROM data_type_ex2;
 
 
+-- 날짜
+-- DATE
+CREATE TABLE data_type_ex3
+(
+date1 DATE
+);
+SELECT sysdate FROM DUAL;
+INSERT INTO data_type_ex3
+VALUES (sysdate);
+INSERT INTO data_type_ex3
+VALUES ('2020/11/01');
+INSERT INTO data_type_ex3
+VALUES (TO_DATE('2020-10-10', 'YYYY-MM-DD'));
+INSERT INTO data_type_ex3
+VALUES (TO_DATE('2020-09-09 17:33:22', 'YYYY-MM-DD HH24:MI:SS'));
+SELECT * FROM data_type_ex3;
+SELECT TO_CHAR(date1, 'YYYY-MM-DD HH24:MI:SS')
+FROM data_type_ex3;
+COMMIT;
 
