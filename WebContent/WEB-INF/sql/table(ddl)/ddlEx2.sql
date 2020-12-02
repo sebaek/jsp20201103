@@ -23,4 +23,12 @@ commit;
 select * FROM dept20;
 */
 
+-- 컬럼 삭제
+-- ALTER TABLE tname DROP COLUMN col_name;
+ALTER TABLE dept20
+DROP COLUMN ename;
+DESC dept20;
+
+
+
 
