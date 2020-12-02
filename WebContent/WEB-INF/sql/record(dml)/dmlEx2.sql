@@ -52,6 +52,12 @@ INSERT INTO data_type_ex2
 INSERT INTO data_type_ex2
 (vchar2) VALUES ('abcdefg');
 
+INSERT INTO data_type_ex2
+(vchar2) VALUES ('한');
+INSERT INTO data_type_ex2
+(vchar2) VALUES ('한글');
+INSERT INTO data_type_ex2
+(vchar2) VALUES ('한글날');
 COMMIT;
 SELECT * FROM data_type_ex2;
 
