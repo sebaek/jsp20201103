@@ -53,9 +53,26 @@ SELECT * FROM old_table;
 CREATE TABLE dept_second
 AS
 SELECT * FROM department;
+DESC dept_second;
+DESC department;
+SELECT * FROM dept_second;
 
+-- 책 예제 (208쪽)
+CREATE TABLE dept20
+AS
+SELECT eno, ename, salary*12 annsal
+FROM employee
+WHERE dno=20;
+DESC dept20;
+DESC employee;
 
-
-
+-- 책 예제 (209쪽)
+CREATE TABLE dept_forth
+AS
+SELECT dno, dname
+FROM department
+WHERE 0=1;
+SELECT * FROM department;
+SELECT * FROM dept_forth;
 
 
