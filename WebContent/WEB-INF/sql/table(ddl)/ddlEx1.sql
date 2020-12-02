@@ -50,6 +50,10 @@ AS
 SELECT * FROM old_table;
 
 -- 책 예제 (207쪽)
+CREATE TABLE dept_second
+AS
+SELECT * FROM department;
+
 
 
 
