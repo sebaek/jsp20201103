@@ -1,32 +1,32 @@
--- table ¸¸µé±â
+-- table ë§Œë“¤ê¸°
 -- CREATE TABLE
 
 CREATE TABLE table1 (
- col1 NUMBER(3, 1), -- ¼ö 3ÀÇ ±æÀÌ°í ¼Ò¼ö¹Ø 1
- col2 VARCHAR2(6),  -- °¡º¯±æÀÌ ¹®ÀÚ¿­ 6bytes±îÁö
- col3 CHAR(4),      -- °íÁ¤±æÀÌ ¹®ÀÚ¿­ 4bytes
- col4 DATE          -- ³¯Â¥½Ã°£
+ col1 NUMBER(3, 1), -- ìˆ˜ 3ì˜ ê¸¸ì´ê³  ì†Œìˆ˜ë°‘ 1
+ col2 VARCHAR2(6),  -- ê°€ë³€ê¸¸ì´ ë¬¸ìžì—´ 6bytesê¹Œì§€
+ col3 CHAR(4),      -- ê³ ì •ê¸¸ì´ ë¬¸ìžì—´ 4bytes
+ col4 DATE          -- ë‚ ì§œì‹œê°„
 );
 SELECT * FROM table1;
 DESC table1;
 SELECT * FROM department;
 
--- DATA TYPE (Ã¥ 17ÂÊ)
--- ¼ö, ¹®ÀÚ¿­, ³¯Â¥½Ã°£
--- ¼ö
+-- DATA TYPE (ì±… 17ìª½)
+-- ìˆ˜, ë¬¸ìžì—´, ë‚ ì§œì‹œê°„
+-- ìˆ˜
 -- NUMBER
--- NUMBER(°ª)
---   ex)°ªÀÌ 3ÀÌ¸é 1000ÀÌ»ó Ç¥½Ã ¸øÇÔ
--- NUMBER(°ª1, °ª2)
---   ex)°ª1Àº ÃÑ±æÀÌ, °ª2´Â ¼Ò¼öÁ¡¹ØÀÇ ±æÀÌ
---      NUMBER(3, 2) : 10ÀÌ»ó Ç¥½Ã ¸øÇÔ
+-- NUMBER(ê°’)
+--   ex)ê°’ì´ 3ì´ë©´ 1000ì´ìƒ í‘œì‹œ ëª»í•¨
+-- NUMBER(ê°’1, ê°’2)
+--   ex)ê°’1ì€ ì´ê¸¸ì´, ê°’2ëŠ” ì†Œìˆ˜ì ë°‘ì˜ ê¸¸ì´
+--      NUMBER(3, 2) : 10ì´ìƒ í‘œì‹œ ëª»í•¨
 
--- ¹®ÀÚ¿­
--- VARCHAR2(°ª) : °¡º¯ ±æÀÌ
--- °ª: byte¼ö 
--- CHAR(°ª) : °íÁ¤ ±æÀÌ
--- °ª: byte¼ö
+-- ë¬¸ìžì—´ 
+-- VARCHAR2(ê°’) : ê°€ë³€ ê¸¸ì´
+-- ê°’: byteìˆ˜ 
+-- CHAR(ê°’) : ê³ ì • ê¸¸ì´
+-- ê°’: byteìˆ˜
 
 
--- ³¯Â¥½Ã°£
+-- ë‚ ì§œì‹œê°„
 -- DATE
