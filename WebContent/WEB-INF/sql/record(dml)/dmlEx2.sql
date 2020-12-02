@@ -107,3 +107,25 @@ VALUES (7020, 'JERRY', 'SALESMAN', SYSDATE, 30);
 
 SELECT * FROM emp_copy;
 
+
+-- 책 (231쪽)
+DROP TABLE dept_copy;
+CREATE TABLE dept_copy
+AS
+SELECT * FROM department WHERE 0=1;
+SELECT * FROM dept_copy;
+
+INSERT INTO dept_copy
+SELECT * FROM department ;
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+
