@@ -82,3 +82,28 @@ SELECT TO_CHAR(date1, 'YYYY-MM-DD HH24:MI:SS')
 FROM data_type_ex3;
 COMMIT;
 
+-- 책(229쪽)
+CREATE TABLE emp_copy
+AS
+SELECT eno, ename, job, hiredate, dno
+FROM employee
+WHERE 0=1;
+
+INSERT INTO emp_copy
+VALUES (7000, 'CANDY', 'MANAGER', '2012/05/01', 10);
+
+INSERT INTO emp_copy
+VALUES (7000, 'CANDY', 'MANAGER', TO_DATE('2012/05/01', 'YYYY/MM/DD'), 10);
+
+SELECT * FROM emp_copy;
+
+-- 책 (230쪽)
+INSERT INTO emp_copy
+VALUES (7010, 'TOM', 'MANAGER',
+TO_DATE('2012,05,01', 'YYYY,MM,DD'), 20);
+
+INSERT INTO emp_copy
+VALUES (7020, 'JERRY', 'SALESMAN', SYSDATE, 30);
+
+SELECT * FROM emp_copy;
+
