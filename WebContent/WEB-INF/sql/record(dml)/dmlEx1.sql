@@ -19,3 +19,18 @@ SELECT * FROM dept_copy;
 
 COMMIT;
 
+-- NULL
+-- 값을 안넣는 경우
+-- 책 (228)
+DESC dept_copy;
+INSERT INTO dept_copy (dno, dname)
+VALUES (30, 'SALES');
+SELECT * FROM dept_copy;
+
+INSERT INTO dept_copy (dno, dname, loc)
+VALUES (40, 'OPERATIONS', NULL);
+
+COMMIT;
+
+
+
