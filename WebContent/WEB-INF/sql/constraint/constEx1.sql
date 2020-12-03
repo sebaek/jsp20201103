@@ -48,7 +48,21 @@ INSERT INTO const02 (name)
 VALUES ('c');
 SELECT * FROM const02;
 
+-- CHECK
+CREATE TABLE const03
+(
+name VARCHAR2(30),
+age NUMBER CHECK (age > 0)
+);
+INSERT INTO const03 (name, age)
+VALUES ('a', 30);
+INSERT INTO const03 (name, age)
+VALUES ('b', 0); -- x
+INSERT INTO const03 (name)
+VALUES ('c');
+SELECT * FROM const03;
 
+COMMIT;
 
 
 
