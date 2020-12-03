@@ -65,7 +65,23 @@ SELECT * FROM const03;
 COMMIT;
 
 
-
+-- 제약사항 여러 개 사용 가능
+CREATE TABLE const04
+(
+email VARCHAR2(30) 
+  NOT NULL UNIQUE CHECK(email LIKE '%@%'),
+name VARCHAR2(30)
+);
+INSERT INTO const04 (email, name)
+VALUES (null, 'a');
+INSERT INTO const04 (email, name)
+VALUES ('a', 'b');
+INSERT INTO const04 (email, name)
+VALUES ('a@g', 'c');
+INSERT INTO const04 (email, name)
+VALUES ('a@g', 'd');
+SELECT * FROM const04;
+COMMIT;
 
 
 
