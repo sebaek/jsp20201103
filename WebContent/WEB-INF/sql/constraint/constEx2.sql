@@ -33,3 +33,42 @@ VALUES (2, 'd');
 SELECT * FROM const06;
 COMMIT;
 
+
+-- foreign key
+CREATE TABLE const07_emp
+AS
+SELECT * FROM employee;
+CREATE TABLE const07_dep
+AS
+SELECT * FROM department;
+
+SELECT eno, ename, dno FROM const07_emp;
+SELECT * FROM const07_dep;
+INSERT INTO const07_emp (eno, ename, dno)
+VALUES (8787, 'ABC', 50);
+COMMIT;
+
+DESC department;
+CREATE TABLE const08_dep
+(
+DNO NUMBER(2) PRIMARY KEY,
+DNAME VARCHAR2(14),
+LOC VARCHAR2(13)
+);
+INSERT INTO const08_dep
+SELECT * FROM department;
+COMMIT;
+SELECT * FROM const08_dep;
+
+CREATE TABLE const08_emp
+(
+name VARCHAR2(30),
+dno NUMBER(2) REFERENCES const08_dep
+);
+INSERT INTO const08_emp (name, dno)
+VALUES ('a', 10);
+INSERT INTO const08_emp (name, dno)
+VALUES ('b', 50);
+INSERT INTO const08_emp (name, dno)
+VALUES ('c', null);
+COMMIT;
