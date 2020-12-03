@@ -54,5 +54,22 @@ DELETE dept_copy;
 
 COMMIT;
 
+-- 책 236쪽
+DROP TABLE emp_copy;
+CREATE TABLE emp_copy
+AS
+SELECT * FROM employee;
+SELECT * FROM emp_copy;
+
+DELETE emp_copy
+WHERE dno=(SELECT dno
+           FROM department
+           WHERE dname='SALES');
+COMMIT;
+
+SELECT dno
+FROM department
+WHERE dname='SALES';
+
 
 
