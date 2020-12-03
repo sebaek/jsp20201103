@@ -24,5 +24,5 @@ VALUES ('a', 10);
 INSERT INTO const10
 VALUES ('b', 50);
 
-
+COMMIT;
 
