@@ -17,3 +17,28 @@ UPDATE dept_copy
 SET dname='PROGRAMMING', loc='SEOUL'
 WHERE dno=10;
 SELECT * FROM dept_copy;
+
+COMMIT;
+
+UPDATE dept_copy
+SET loc=(
+        SELECT loc
+        FROM dept_copy
+        WHERE dno=20
+)
+WHERE dno=10;
+SELECT * FROM dept_copy;
+
+-- 책 234쪽
+UPDATE dept_copy
+SET dname=(SELECT dname 
+            FROM dept_copy
+            WHERE dno=30
+),
+loc=(SELECT loc
+     FROM dept_copy
+     WHERE dno=30)
+WHERE dno=10;
+SELECT * FROM dept_copy;
+
+COMMIT;
