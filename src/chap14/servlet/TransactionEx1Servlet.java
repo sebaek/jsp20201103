@@ -84,13 +84,23 @@ public class TransactionEx1Servlet extends HttpServlet {
 	private void update2(Connection con) {
 		String sql = "UPDATE bank " 
 								+ "SET money=(money+50) " 
-								+ "WHERE name='captain'";
+								+ "WHERE name='captain2'";
 
 		try {
 			Statement stmt = con.createStatement();
-			stmt.executeUpdate(sql);
+			int row = stmt.executeUpdate(sql);
+			
+			if (row == 0) {
+				con.rollback();
+			}
+			
 			stmt.close();
 		} catch (Exception e) {
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
@@ -102,9 +112,19 @@ public class TransactionEx1Servlet extends HttpServlet {
 
 		try {
 			Statement stmt = con.createStatement();
-			stmt.executeUpdate(sql);
+			int row = stmt.executeUpdate(sql);
+			
+			if (row == 0) {
+				con.rollback();
+			}
+			
 			stmt.close();
 		} catch (Exception e) {
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
