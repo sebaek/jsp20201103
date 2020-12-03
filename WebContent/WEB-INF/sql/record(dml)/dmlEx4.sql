@@ -42,3 +42,17 @@ WHERE dno=10;
 SELECT * FROM dept_copy;
 
 COMMIT;
+
+-- DELETE
+-- DELETE FROM tname WHERE 
+SELECT * FROM dept_copy;
+
+DELETE dept_copy
+WHERE dno=10;
+
+DELETE dept_copy;
+
+COMMIT;
+
+
+
