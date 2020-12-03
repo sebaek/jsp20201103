@@ -29,6 +29,24 @@ VALUES (' ', 30);
 SELECT * FROM const01;
 
 
+-- UNIQUE
+CREATE TABLE const02
+(
+    email VARCHAR2(30) UNIQUE,
+    name VARCHAR2(30)
+);
+
+INSERT INTO const02 (email, name)
+VALUES ('a', 'b');
+INSERT INTO const02 (email, name)
+VALUES ('a', 'c'); -- x
+INSERT INTO const02 (email, name)
+VALUES ('c', 'b');
+INSERT INTO const02 (name)
+VALUES ('c');
+INSERT INTO const02 (name)
+VALUES ('c');
+SELECT * FROM const02;
 
 
 
