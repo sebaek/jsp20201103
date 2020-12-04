@@ -52,6 +52,20 @@ SELECT * FROM post;
 
 
 
+-- 
+CREATE SEQUENCE my_seq2
+START WITH 100;
+
+CREATE SEQUENCE my_seq3
+START WITH 1000
+INCREMENT BY 100;
+
+INSERT INTO post (id, title, body)
+VALUES (my_seq2.nextval, 'abc', 'def');
+
+INSERT INTO post (id, title, body)
+VALUES (my_seq3.nextval, 'abc', 'def');
+SELECT * FROM post;
 
 
 
