@@ -37,3 +37,27 @@ FOREIGN KEY(dno) REFERENCES dept_copy(dno);
 ALTER TABLE emp_copy
 MODIFY ename CONSTRAINT emp_copy_ename_nn NOT NULL;
 
+
+-- 제약사항 삭제
+ALTER TABLE emp_copy
+DROP CONSTRAINT emp_copy_ename_nn;
+
+SELECT * FROM user_constraints
+WHERE table_name='EMP_COPY';
+
+SELECT * FROM user_constraints
+WHERE table_name='DEPT_COPY';
+
+ALTER TABLE emp_copy
+DROP CONSTRAINT SYS_C007398;
+
+-- dept_copy primary key 제약사항 삭제
+ALTER TABLE dept_copy
+DROP CONSTRAINT DEPT_COPY_DNO_PK;
+
+ALTER TABLE emp_copy
+DROP CONSTRAINT EMP_COPY_DNO_FK;
+
+ALTER TABLE dept_copy
+DROP PRIMARY KEY CASCADE;
+
