@@ -68,6 +68,20 @@ VALUES (my_seq3.nextval, 'abc', 'def');
 SELECT * FROM post;
 
 
+SELECT * FROM user_sequences;
 
+SELECT my_seq2.currval FROM dual;
+SELECT my_seq2.nextval FROM dual;
+
+-- 시퀀스 제거
+
+DROP SEQUENCE my_seq;
+DROP SEQUENCE my_seq2;
+
+-- 시퀀스 수정
+ALTER SEQUENCE my_seq3
+INCREMENT BY 1000;
+SELECT my_seq3.currval FROM dual;
+SELECT my_seq3.nextval FROM dual;
 
 
