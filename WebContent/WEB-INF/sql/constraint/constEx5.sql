@@ -29,6 +29,9 @@ SELECT * FROM user_constraints
 WHERE table_name='DEPT_COPY';
 
 -- 책 (259 쪽)
+ALTER TABLE emp_copy
+ADD CONSTRAINT emp_copy_dno_fk
+FOREIGN KEY(dno) REFERENCES dept_copy(dno);
 
 
 
