@@ -26,6 +26,27 @@
 <input type="submit" class="btn btn-primary" value="등록" />
 </form>
 </div>
+
+<hr />
+
+<div class="container">
+  <table class="table">
+  	<thead>
+  		<tr>
+  			<th>번호</th>
+  			<th>제목</th>
+  		</tr>
+  	</thead>
+    <tbody>
+    	<c:forEach items="posts" var="post">
+          <tr>
+            <td>${post.id }</td>
+            <td>${post.title }</td>
+          </tr>
+        </c:forEach>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
 
