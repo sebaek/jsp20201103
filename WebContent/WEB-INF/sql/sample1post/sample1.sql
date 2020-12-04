@@ -5,5 +5,5 @@ CREATE TABLE post (
   body VARCHAR2(4000),
   PRIMARY KEY(id)
 );
-
+SELECT * FROM post;
 
