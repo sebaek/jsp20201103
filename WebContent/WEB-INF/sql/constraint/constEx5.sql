@@ -33,5 +33,7 @@ ALTER TABLE emp_copy
 ADD CONSTRAINT emp_copy_dno_fk
 FOREIGN KEY(dno) REFERENCES dept_copy(dno);
 
-
+-- 책 (260 쪽)
+ALTER TABLE emp_copy
+MODIFY ename CONSTRAINT emp_copy_ename_nn NOT NULL;
 
