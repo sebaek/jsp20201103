@@ -52,7 +52,8 @@ public class MainServlet extends HttpServlet {
 	private List<Post> getPosts() {
 		List<Post> list = new ArrayList<>();
 
-		String sql = ""; // post 테이블에서 id, title을 id의 내림차순
+		// post 테이블에서 id, title을 id의 내림차순
+		String sql = "SELECT id, title FROM post ORDER BY id DESC";
 
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		// jdbc:oracle:thin:@mydb501_high?TNS_ADMIN=C:\\Users\\mydb00\\Documents\\Wallet_mydb501
