@@ -85,3 +85,25 @@ SELECT my_seq3.currval FROM dual;
 SELECT my_seq3.nextval FROM dual;
 
 
+create table t1;
+create sequence s1;
+
+create table t2;
+create sequence s2;
+
+-- 자동 증가 컬럼
+DROP TABLE t1;
+CREATE TABLE t1 (
+    id NUMBER GENERATED ALWAYS as IDENTITY(START WITH 1 INCREMENT by 1),
+    name VARCHAR2(30)
+);
+INSERT INTO t1 (name) VALUES ('jane');
+INSERT INTO t1 (name) VALUES ('donald');
+SELECT * FROM t1;
+
+SELECT * FROM user_sequences;
+
+
+
+
+
