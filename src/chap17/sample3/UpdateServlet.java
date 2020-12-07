@@ -1,6 +1,9 @@
 package chap17.sample3;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,6 +54,37 @@ public class UpdateServlet extends HttpServlet {
 		update(post);
 		
 		response.sendRedirect(request.getContextPath()+ "/sample3/post/main");
+	}
+
+	private void update(Post post) {
+		String sql = "UPDATE post "
+				+ "SET title=?, body=? "
+				+ "WHERE id=?";
+		
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		String user = "c##mydbms";
+		String password = "admin";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		
+		try (
+				Connection con = DriverManager.getConnection(url, user, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setString(1, post.getTitle());
+			pstmt.setString(2, post.getBody());
+			pstmt.setInt(3, post.getId());
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	
