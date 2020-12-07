@@ -30,10 +30,11 @@ $(function() {
 
 <div class="container">
   <h1>게시물 보기</h1>
-  <form action="">
-    제목 : <input id="title-input" type="text" value="${post.title }" readonly />
+  <form action="<%= request.getContextPath() %>/sample3/post/update" method="post">
+    <input type="text" hidden value="${post.id }" name="id"/>
+    제목 : <input id="title-input" name="title" type="text" value="${post.title }" readonly />
     <br />
-    <textarea id="body-textarea" name="" readonly cols="30" rows="5">${post.body }</textarea>
+    <textarea id="body-textarea" name="body" readonly cols="30" rows="5">${post.body }</textarea>
     <br />
     <input class="btn btn-secondary" hidden id="submit-btn" type="submit" value="전송" />
   </form>
