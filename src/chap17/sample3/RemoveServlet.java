@@ -1,6 +1,10 @@
 package chap17.sample3;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,12 +33,34 @@ public class RemoveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		
-		String sql = "DELETE FROM post WHERE id=?";
-		
 		// delete jdbc code
 		remove(id);
 		
 		response.sendRedirect(request.getContextPath() + "/sample3/post/main");
+	}
+
+	private void remove(String id) {
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		String user = "c##mydbms";
+		String password = "admin";
+		String sql = "DELETE FROM post WHERE id=?";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		
+		try (
+				Connection con = DriverManager.getConnection(url, user, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, Integer.parseInt(id));
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
