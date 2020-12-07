@@ -15,9 +15,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:url value="/sample3/post/remove" var="removeURL">
+  <c:param name="id" value="${post.id }" />
+</c:url>
+
 제목 : ${post.title }
 <br />
 본문 : ${post.body }
+
+<br />
+${removeURL }
+<br />
+<a class="btn btn-danger" href="${removeURL }" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
 </body>
 </html>
 
