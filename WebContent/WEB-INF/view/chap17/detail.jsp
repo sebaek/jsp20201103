@@ -13,6 +13,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<script>
+$(function() {
+	$("#modify-btn").click(function() {
+		$("#title-input").removeAttr("readonly");
+		$("#body-textarea").removeAttr("readonly");
+	});
+});
+</script>
 </head>
 <body>
 <c:url value="/sample3/post/remove" var="removeURL">
@@ -22,10 +30,11 @@
 <div class="container">
   <h1>게시물 보기</h1>
   <form action="">
-    제목 : <input type="text" value="${post.title }" readonly />
+    제목 : <input id="title-input" type="text" value="${post.title }" readonly />
     <br />
-    <textarea name="" readonly cols="30" rows="5">${post.body }</textarea>
+    <textarea id="body-textarea" name="" readonly cols="30" rows="5">${post.body }</textarea>
   </form>
+  <button class="btn btn-warning" id="modify-btn">수정</button>
   <a class="btn btn-danger" href="${removeURL }" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
 </div>
 </body>
