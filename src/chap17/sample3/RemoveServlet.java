@@ -32,6 +32,7 @@ public class RemoveServlet extends HttpServlet {
 		String sql = "DELETE FROM post WHERE id=?";
 		
 		// delete jdbc code
+		remove(id);
 		
 		response.sendRedirect(request.getContextPath() + "/sample3/post/main");
 	}
