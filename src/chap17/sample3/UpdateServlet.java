@@ -65,12 +65,6 @@ public class UpdateServlet extends HttpServlet {
 		String user = "c##mydbms";
 		String password = "admin";
 		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
-		
 		try (
 				Connection con = DriverManager.getConnection(url, user, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);

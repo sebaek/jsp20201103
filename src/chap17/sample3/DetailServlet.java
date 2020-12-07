@@ -55,9 +55,6 @@ public class DetailServlet extends HttpServlet {
 		String sql = "SELECT id, title, body FROM post WHERE id=?";
 
 		try {
-			// 1. class loading
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
 			// 2. connection
 			con = DriverManager.getConnection(url, user, password);
 			// 3. statement

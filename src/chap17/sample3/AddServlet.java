@@ -77,8 +77,6 @@ public class AddServlet extends HttpServlet {
 		
 		int row = 0;
 		try {
-			// 1.드라이버로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2.연결생성
 			Connection con = DriverManager.getConnection(url, user, password);
 			// 3.statement생성

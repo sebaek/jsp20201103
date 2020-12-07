@@ -45,12 +45,6 @@ public class RemoveServlet extends HttpServlet {
 		String password = "admin";
 		String sql = "DELETE FROM post WHERE id=?";
 		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
-		
 		try (
 				Connection con = DriverManager.getConnection(url, user, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);
