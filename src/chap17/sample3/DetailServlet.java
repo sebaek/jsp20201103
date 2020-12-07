@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import chap05.Post;
+import chap20.lecture.DBUtil;
 
 /**
  * Servlet implementation class DetailServlet
@@ -56,7 +57,8 @@ public class DetailServlet extends HttpServlet {
 
 		try {
 			// 2. connection
-			con = DriverManager.getConnection(url, user, password);
+//			con = DriverManager.getConnection(url, user, password);
+			con = DBUtil.getConnection();
 			// 3. statement
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, Integer.parseInt(id));

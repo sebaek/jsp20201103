@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import chap20.lecture.DBUtil;
+
 /**
  * Servlet implementation class RemoveServlet
  */
@@ -40,13 +42,10 @@ public class RemoveServlet extends HttpServlet {
 	}
 
 	private void remove(String id) {
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String user = "c##mydbms";
-		String password = "admin";
 		String sql = "DELETE FROM post WHERE id=?";
 		
 		try (
-				Connection con = DriverManager.getConnection(url, user, password);
+				Connection con = DBUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
 			pstmt.setInt(1, Integer.parseInt(id));

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import chap05.Post;
+import chap20.lecture.DBUtil;
 
 /**
  * Servlet implementation class AddServlet
@@ -78,7 +79,8 @@ public class AddServlet extends HttpServlet {
 		int row = 0;
 		try {
 			// 2.연결생성
-			Connection con = DriverManager.getConnection(url, user, password);
+//			Connection con = DriverManager.getConnection(url, user, password);
+			Connection con = DBUtil.getConnection();
 			// 3.statement생성
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, post.getTitle());
