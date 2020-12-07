@@ -1,5 +1,8 @@
 package chap20.lecture;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -33,8 +36,24 @@ public class Ex2ServletcontextListener implements ServletContextListener {
     	System.out.println("우리 앱 실행 EX2");
     	ServletContext application = sce.getServletContext();
     	String val = application.getInitParameter("my-param1");
+    	String url = application.getInitParameter("jdbcUrl");
+    	String user = application.getInitParameter("jdbcUser");
+    	String password = application.getInitParameter("jdbcPassword");
+    	
+    	
     	
     	System.out.println(val);
+    	System.out.println(url);
+    	System.out.println(user);
+    	System.out.println(password);
+    	
+    	try 
+    	(Connection con 
+    			= DriverManager.getConnection(url, user, password);) {
+    		System.out.println(con);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+			}
     }
 	
 }
