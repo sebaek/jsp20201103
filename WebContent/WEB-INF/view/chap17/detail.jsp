@@ -19,14 +19,15 @@
   <c:param name="id" value="${post.id }" />
 </c:url>
 
-제목 : ${post.title }
-<br />
-본문 : ${post.body }
-
-<br />
-${removeURL }
-<br />
-<a class="btn btn-danger" href="${removeURL }" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+<div class="container">
+  <h1>게시물 보기</h1>
+  <form action="">
+    제목 : <input type="text" value="${post.title }" readonly />
+    <br />
+    <textarea name="" readonly cols="30" rows="5">${post.body }</textarea>
+  </form>
+  <a class="btn btn-danger" href="${removeURL }" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+</div>
 </body>
 </html>
 
