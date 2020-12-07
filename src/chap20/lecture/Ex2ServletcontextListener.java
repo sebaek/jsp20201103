@@ -40,7 +40,9 @@ public class Ex2ServletcontextListener implements ServletContextListener {
     	String user = application.getInitParameter("jdbcUser");
     	String password = application.getInitParameter("jdbcPassword");
     	
-    	
+    	DBUtil.setUrl(url);
+    	DBUtil.setUser(user);
+    	DBUtil.setPassword(password);
     	
     	System.out.println(val);
     	System.out.println(url);
